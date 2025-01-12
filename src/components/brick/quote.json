@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_brick_quotes",
+  "info": {
+    "displayName": "quote",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "blocks",
+      "required": true
+    },
+    "author": {
+      "type": "string"
+    }
+  }
+}

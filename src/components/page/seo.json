@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_page_seos",
+  "info": {
+    "displayName": "Seo",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "ogTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "ogDescription": {
+      "type": "string"
+    },
+    "ogImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    }
+  }
+}

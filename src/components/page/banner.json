@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_page_banners",
+  "info": {
+    "displayName": "Banner",
+    "icon": "lightbulb",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "big"
+      ],
+      "default": "small",
+      "required": true
+    },
+    "textColor": {
+      "type": "enumeration",
+      "enum": [
+        "black",
+        "white"
+      ],
+      "default": "black"
+    }
+  }
+}

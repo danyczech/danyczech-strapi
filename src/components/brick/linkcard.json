@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_brick_linkcards",
+  "info": {
+    "displayName": "LinkCard",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

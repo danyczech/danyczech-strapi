@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_page_imagescmps",
+  "info": {
+    "displayName": "imagesComponent",
+    "icon": "picture",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "separate": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "images": {
+      "type": "component",
+      "repeatable": true,
+      "component": "brick.image",
+      "required": true,
+      "min": 1,
+      "max": 4
+    }
+  }
+}
