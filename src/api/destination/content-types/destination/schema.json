@@ -4,7 +4,8 @@
   "info": {
     "singularName": "destination",
     "pluralName": "destinations",
-    "displayName": "Destination"
+    "displayName": "Destination",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -78,13 +79,20 @@
       "components": [
         "page.textcmp",
         "page.imgtxt",
-        "page.imagescmp"
+        "page.imagescmp",
+        "page.divider"
       ]
     },
     "country": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::country.country",
+      "inversedBy": "destinations"
+    },
+    "continent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::continent.continent",
       "inversedBy": "destinations"
     }
   }

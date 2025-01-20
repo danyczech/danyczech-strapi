@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "continents",
+  "info": {
+    "singularName": "continent",
+    "pluralName": "continents",
+    "displayName": "Continent"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "continentId": {
+      "type": "integer"
+    },
+    "destinations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::destination.destination",
+      "mappedBy": "continent"
+    },
+    "related_page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::destination.destination"
+    }
+  }
+}

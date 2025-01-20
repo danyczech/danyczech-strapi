@@ -387,7 +387,13 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
   attributes: {
     articleZone: Schema.Attribute.DynamicZone<
-      ['page.textcmp', 'page.imgtxt', 'page.imagescmp', 'page.alert']
+      [
+        'page.textcmp',
+        'page.imgtxt',
+        'page.imagescmp',
+        'page.alert',
+        'page.divider',
+      ]
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -447,6 +453,43 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiContinentContinent extends Struct.CollectionTypeSchema {
+  collectionName: 'continents';
+  info: {
+    displayName: 'Continent';
+    pluralName: 'continents';
+    singularName: 'continent';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    continentId: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    destinations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::destination.destination'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::continent.continent'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    related_page: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::destination.destination'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
   collectionName: 'countries';
   info: {
@@ -502,6 +545,7 @@ export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
 export interface ApiDestinationDestination extends Struct.CollectionTypeSchema {
   collectionName: 'destinations';
   info: {
+    description: '';
     displayName: 'Destination';
     pluralName: 'destinations';
     singularName: 'destination';
@@ -527,12 +571,16 @@ export interface ApiDestinationDestination extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    continent: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::continent.continent'
+    >;
     country: Schema.Attribute.Relation<'manyToOne', 'api::country.country'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     destinationZone: Schema.Attribute.DynamicZone<
-      ['page.textcmp', 'page.imgtxt', 'page.imagescmp']
+      ['page.textcmp', 'page.imgtxt', 'page.imagescmp', 'page.divider']
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1086,6 +1134,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::article.article': ApiArticleArticle;
+      'api::continent.continent': ApiContinentContinent;
       'api::country.country': ApiCountryCountry;
       'api::destination.destination': ApiDestinationDestination;
       'plugin::content-releases.release': PluginContentReleasesRelease;

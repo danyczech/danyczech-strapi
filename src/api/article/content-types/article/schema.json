@@ -73,7 +73,8 @@
         "page.textcmp",
         "page.imgtxt",
         "page.imagescmp",
-        "page.alert"
+        "page.alert",
+        "page.divider"
       ]
     },
     "date": {
