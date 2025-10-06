@@ -26,3 +26,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Country
   - Destination
 - Changelog
+
+### Changed
+- upgrade Strapi version to 5.25.0
