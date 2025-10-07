@@ -3,7 +3,7 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface BrickImage extends Struct.ComponentSchema {
   collectionName: 'components_brick_images';
   info: {
-    displayName: 'image';
+    displayName: 'Image';
   };
   attributes: {
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
@@ -14,12 +14,12 @@ export interface BrickLinkcard extends Struct.ComponentSchema {
   collectionName: 'components_brick_linkcards';
   info: {
     description: '';
-    displayName: 'LinkCard';
+    displayName: 'Link Card';
     icon: 'cursor';
   };
   attributes: {
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    text: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     url: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -28,7 +28,7 @@ export interface BrickLinkcard extends Struct.ComponentSchema {
 export interface BrickQuote extends Struct.ComponentSchema {
   collectionName: 'components_brick_quotes';
   info: {
-    displayName: 'quote';
+    displayName: 'Quote';
     icon: 'quote';
   };
   attributes: {
@@ -73,7 +73,7 @@ export interface PageBanner extends Struct.ComponentSchema {
 export interface PageDivider extends Struct.ComponentSchema {
   collectionName: 'components_page_dividers';
   info: {
-    displayName: 'divider';
+    displayName: 'Divider';
     icon: 'arrowDown';
   };
   attributes: {
@@ -85,7 +85,7 @@ export interface PageImagescmp extends Struct.ComponentSchema {
   collectionName: 'components_page_imagescmps';
   info: {
     description: '';
-    displayName: 'imagesComponent';
+    displayName: 'Images Component';
     icon: 'picture';
   };
   attributes: {
@@ -98,9 +98,6 @@ export interface PageImagescmp extends Struct.ComponentSchema {
         },
         number
       >;
-    separate: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<true>;
   };
 }
 
@@ -108,14 +105,15 @@ export interface PageImgtxt extends Struct.ComponentSchema {
   collectionName: 'components_page_imgtxts';
   info: {
     description: '';
-    displayName: 'ImageText';
+    displayName: 'Image Text';
   };
   attributes: {
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    imgposition: Schema.Attribute.Enumeration<['left', 'right']> &
+    imgPosition: Schema.Attribute.Enumeration<['left', 'right']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'left'>;
-    text: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    moreText: Schema.Attribute.Blocks;
+    perex: Schema.Attribute.Blocks & Schema.Attribute.Required;
     title: Schema.Attribute.String;
   };
 }
@@ -134,21 +132,6 @@ export interface PageSeo extends Struct.ComponentSchema {
   };
 }
 
-export interface PageTextcmp extends Struct.ComponentSchema {
-  collectionName: 'components_page_textcmps';
-  info: {
-    description: '';
-    displayName: 'Text Component';
-    icon: 'layer';
-  };
-  attributes: {
-    separate: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<true>;
-    text: Schema.Attribute.Blocks & Schema.Attribute.Required;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -161,7 +144,6 @@ declare module '@strapi/strapi' {
       'page.imagescmp': PageImagescmp;
       'page.imgtxt': PageImgtxt;
       'page.seo': PageSeo;
-      'page.textcmp': PageTextcmp;
     }
   }
 }

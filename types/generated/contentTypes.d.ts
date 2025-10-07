@@ -448,13 +448,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
   attributes: {
     articleZone: Schema.Attribute.DynamicZone<
-      [
-        'page.textcmp',
-        'page.imgtxt',
-        'page.imagescmp',
-        'page.alert',
-        'page.divider',
-      ]
+      ['page.imgtxt', 'page.imagescmp', 'page.alert', 'page.divider']
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -641,7 +635,7 @@ export interface ApiDestinationDestination extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     destinationZone: Schema.Attribute.DynamicZone<
-      ['page.textcmp', 'page.imgtxt', 'page.imagescmp', 'page.divider']
+      ['page.imgtxt', 'page.imagescmp', 'page.divider']
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

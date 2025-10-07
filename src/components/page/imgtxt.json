@@ -1,7 +1,7 @@
 {
   "collectionName": "components_page_imgtxts",
   "info": {
-    "displayName": "ImageText",
+    "displayName": "Image Text",
     "description": ""
   },
   "options": {},
@@ -14,21 +14,24 @@
         "images"
       ]
     },
-    "title": {
-      "type": "string"
-    },
-    "text": {
-      "type": "blocks",
-      "required": true
-    },
-    "imgposition": {
+    "imgPosition": {
       "type": "enumeration",
+      "required": true,
+      "default": "left",
       "enum": [
         "left",
         "right"
-      ],
-      "required": true,
-      "default": "left"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "perex": {
+      "type": "blocks",
+      "required": true
+    },
+    "moreText": {
+      "type": "blocks"
     }
   }
 }

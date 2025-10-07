@@ -77,7 +77,6 @@
       },
       "type": "dynamiczone",
       "components": [
-        "page.textcmp",
         "page.imgtxt",
         "page.imagescmp",
         "page.divider"

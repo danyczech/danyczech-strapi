@@ -1,7 +1,7 @@
 {
   "collectionName": "components_brick_linkcards",
   "info": {
-    "displayName": "LinkCard",
+    "displayName": "Link Card",
     "icon": "cursor",
     "description": ""
   },
@@ -25,7 +25,7 @@
     },
     "text": {
       "type": "string",
-      "required": true
+      "required": false
     }
   }
 }
