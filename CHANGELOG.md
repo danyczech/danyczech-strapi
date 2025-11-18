@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Divider
     - ImagesComponent
     - ImageText
+    - LinkCards
     - SEO
     - TextComponent
 - Multiple pages:
@@ -25,6 +26,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Continent
   - Country
   - Destination
+- Single pages:
+  - About Page
+  - Home Page
 - Changelog
 
 ### Changed

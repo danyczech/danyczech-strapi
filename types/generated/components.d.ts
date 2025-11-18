@@ -118,6 +118,17 @@ export interface PageImgtxt extends Struct.ComponentSchema {
   };
 }
 
+export interface PageLinkCards extends Struct.ComponentSchema {
+  collectionName: 'components_page_link_cards';
+  info: {
+    displayName: 'LinkCards';
+    icon: 'cursor';
+  };
+  attributes: {
+    LinkCards: Schema.Attribute.Component<'brick.linkcard', true>;
+  };
+}
+
 export interface PageSeo extends Struct.ComponentSchema {
   collectionName: 'components_page_seos';
   info: {
@@ -143,6 +154,7 @@ declare module '@strapi/strapi' {
       'page.divider': PageDivider;
       'page.imagescmp': PageImagescmp;
       'page.imgtxt': PageImgtxt;
+      'page.link-cards': PageLinkCards;
       'page.seo': PageSeo;
     }
   }

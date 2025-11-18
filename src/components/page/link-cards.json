@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_link_cards",
+  "info": {
+    "displayName": "LinkCards",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "LinkCards": {
+      "type": "component",
+      "component": "brick.linkcard",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
