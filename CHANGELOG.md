@@ -33,3 +33,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - upgrade Strapi version to 5.25.0
+- upgrade Strapi version to 5.31.0

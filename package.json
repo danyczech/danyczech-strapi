@@ -11,9 +11,9 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.25.0",
-    "@strapi/plugin-users-permissions": "5.25.0",
-    "@strapi/strapi": "5.25.0",
+    "@strapi/plugin-cloud": "5.31.0",
+    "@strapi/plugin-users-permissions": "5.31.0",
+    "@strapi/strapi": "5.31.0",
     "better-sqlite3": "11.3.0",
     "danyczech-strapi": "file:",
     "react": "^18.0.0",
